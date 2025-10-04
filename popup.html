@@ -1,0 +1,120 @@
+<!---
+
+Copyright (c) 2025 Zion Nursery & Primary School, Kovaipudur
+
+Moodle GIFT => JSON => Quiz in HTML
+
+Date : 24-Sep-2025
+
+--->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 280px;
+      padding: 16px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .header h3 {
+      margin: 0 0 4px 0;
+      color: #333;
+      font-size: 18px;
+    }
+    
+    .header p {
+      margin: 0;
+      color: #666;
+      font-size: 12px;
+    }
+    
+    .parse-btn {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .parse-btn:hover {
+      background: #0056b3;
+    }
+    
+    .parse-btn:active {
+      background: #004085;
+    }
+    
+    .shortcut {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 11px;
+      color: #666;
+    }
+    
+    .shortcut-key {
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    
+    .status {
+      margin-top: 12px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      display: none;
+    }
+    
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3>Moodle Quiz Parser</h3>
+    <p>Parse quiz results into clean format</p>
+  </div>
+  
+  <button class="parse-btn" id="parseBtn">Parse Quiz Results</button>
+
+  <!-- Checkbox for sorting id="sortByType" -->
+  <label style="display: block; margin-top: 12px; font-size: 12px;">
+    <input type="checkbox" id="sortByType" style="margin-right: 6px;">
+    Sort by Question Type
+  </label>
+  
+  <div class="shortcut">
+    Shortcut: <span class="shortcut-key">Ctrl+Shift+M</span>
+  </div>
+  
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

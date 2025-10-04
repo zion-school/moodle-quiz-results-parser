@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Moodle Quiz Parser",
+  "version": "1.0",
+  "description": "Parse Moodle quiz results into clean, minimal format",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Parse Moodle Quiz"
+  }
+}
